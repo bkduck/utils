@@ -1,4 +1,4 @@
-module utils
+module github.com/bkduck/utils
 
 go 1.16
 

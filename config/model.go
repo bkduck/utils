@@ -26,8 +26,6 @@ type Log struct {
 }
 
 
-
-
 type CommonConf struct {
 	AppName string `json:"app_name"`
 	Env     string `json:"env"` //alpha beta pre prod

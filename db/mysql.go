@@ -2,9 +2,8 @@ package db
 
 import (
 	"fmt"
-	"go.uber.org/zap"
+	//"go.uber.org/zap"
 	"gorm.io/gorm"
-	"utils/log"
 )
 
 type TypeMysql int32
@@ -34,14 +33,14 @@ func InitMysqlAll(host, db string, maxCon int, cate TypeMysql, enable bool, arg 
 	case Con_Log:
 		MysqlLogCon = con
 	}
-	log.Info("初始化mysql完成", zap.Any("cate", cate), zap.Any("arg", arg))
+	//log.Info("初始化mysql完成", zap.Any("cate", cate), zap.Any("arg", arg))
 }
 
 func InitMysql(host, db string, maxCon int, enable bool, arr ...interface{}) {
-	log.Info("init mysql")
+	//log.Info("init mysql")
 	arg := fmt.Sprintf("%v/%v?charset=utf8mb4&collation=utf8mb4_unicode_ci&parseTime=true&loc=Local", host, db)
 	MysqlCon = NewMysql(arg, maxCon, arr, enable)
-	log.Info("初始化mysql完成", zap.Any("arg", arg))
+	//log.Info("初始化mysql完成", zap.Any("arg", arg))
 }
 
 
